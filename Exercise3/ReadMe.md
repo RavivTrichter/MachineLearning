@@ -1,0 +1,1 @@
+This exercise was mainly on linear classifiers, Perceptrom algorithm and decision trees.

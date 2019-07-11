@@ -1,0 +1,1 @@
+This exercise was on SVM, K Nearest Neighbours and K-Means.

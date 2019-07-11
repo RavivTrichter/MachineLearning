@@ -1,0 +1,1 @@
+This exercise was mainly on linear regression and Gradient Descent.

@@ -1,0 +1,1 @@
+This exercise was mainly on logistic regression and regularization.
