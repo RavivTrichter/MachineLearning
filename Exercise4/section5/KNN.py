@@ -72,41 +72,12 @@ if __name__ == '__main__':
     training_set, testing_set = divide_and_plot_data(x)
     num_of_classes = len(set(list(x[:, -1])))  # number of different classes
 
-    k = 2
-    classified = []
-    for test_vector in testing_set:
-        test_vector_neighbours = get_neighbors(training_set, test_vector, k)
-        max_vote = Vote(test_vector_neighbours, num_of_classes)
-        test_vector = np.append(test_vector, max_vote)
-        classified.append(test_vector)
-    predict(classified, k)
 
-    # K = 3
-    k = 3
-    classified = []
-    for test_vector in testing_set:
-        test_vector_neighbours = get_neighbors(training_set, test_vector, k)
-        max_vote = Vote(test_vector_neighbours, num_of_classes)
-        test_vector = np.append(test_vector, max_vote)
-        classified.append(test_vector)
-    predict(classified, k)
-
-    # K = 5
-    k = 5
-    classified = []
-    for test_vector in testing_set:
-        test_vector_neighbours = get_neighbors(training_set, test_vector, k)
-        max_vote = Vote(test_vector_neighbours, num_of_classes)
-        test_vector = np.append(test_vector, max_vote)
-        classified.append(test_vector)
-    predict(classified, k)
-
-    # K = 7
-    k = 7
-    classified = []
-    for test_vector in testing_set:
-        test_vector_neighbours = get_neighbors(training_set, test_vector, k)
-        max_vote = Vote(test_vector_neighbours, num_of_classes)
-        test_vector = np.append(test_vector, max_vote)
-        classified.append(test_vector)
-    predict(classified, k)
+    for k in [2,3,5,7,20]:
+        classified = []
+        for test_vector in testing_set:
+            test_vector_neighbours = get_neighbors(training_set, test_vector, k)
+            max_vote = Vote(test_vector_neighbours, num_of_classes)
+            test_vector = np.append(test_vector, max_vote)
+            classified.append(test_vector)
+        predict(classified, k)
